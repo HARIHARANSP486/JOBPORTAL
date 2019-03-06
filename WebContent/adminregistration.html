@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+.display {
+	position: absolute;
+	top: 25%;
+	left: 15%;
+}
+body {
+	text-align:left;
+	padding-left: 630px;
+	padding-top: 90px;	
+}
+
+form {
+	display: inline-block;
+}
+</style>
+<body style=" font-family: Times New Roman; font-size: 19px">
+<form method="post" action="AdminRegistrationServlet">
+	<div class="display">
+			<img src="newuser.jpg" alt="hh" width="350px" height="350px">
+			</div>
+		<table>
+			<tbody>
+				<tr align="center">
+					<td style="color: black" colspan="2">
+						<h4>Welcome!!! Register Here</h4>
+					</td>
+					<td></td>
+				</tr>
+				<tr align="left">
+
+				</tr>
+				<tr align="left">
+					<td style="color: black"><b>ADMINID :</b></td>
+					<td><input type="number" name="adminId" required></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				<tr>
+				<tr align="left">
+					<td style="color: black"><b>ADMIN NAME :</b></td>
+					<td><input type="text" name="adminName" pattern="[0-9]{10}"  title="10 digits only" required></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr align="left">
+					<td style="color: black"><b>EmailId :</b></td>
+					<td><input type="email" name="emailId" required></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr align="left">
+					<td style="color: black"><b>PHONE NUMBER :</b></td>
+					<td><input type="number" name="phoneNumber"  required></td>
+				</tr>
+
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr align="left">
+					<td style="color: black"><b>PASSWORD :</b></td>
+					<td><input type="password" name="password"  required></td>
+				</tr>
+
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				</tbody>
+				</table>
+				</form>
+				
+
+</body>
+</html>
