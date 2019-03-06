@@ -25,7 +25,7 @@ public class SearchJobServlet extends HttpServlet {
 		System.out.println(deptName);
 		//SearchJobDAO searchjobDAO=new SearchJobDAO();
 		FindAllDAO findallDAO=new FindAllDAO();
-		//Admin admin=new Admin();
+		Admin admin=new Admin();
 		//admin.setVacancyDept(deptName);
 		try
 		{
