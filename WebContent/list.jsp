@@ -8,8 +8,6 @@
 <title>Insert title here</title>
 </head>
 <style>
-
-
 .display {
 	position: absolute;
 	top: 20%;
@@ -35,53 +33,52 @@
 	color: white;
 }
 
-
 form {
 	display: inline-block;
 }
 </style>
 
 <body>
-<div class="hero-image">
-<div style="padding-left:1200px;text-align:top;padding-top:10px;">
- <a href="login.html"><b>Logout</b></a>
- </div>
- <div class="hero-text">
-	<div style="align:center; ">
-		<form method="post" action="SearchJobServlet">
-			<h3>List of Jobs in various companies and locations:</h3>
-			<table>
-				<thead>
-					<tr>
-						<th
-							style="border: 6px solid #dddddd; text-align: left; padding: 12px;">VACANCYDEPT</th>
-						<th
-							style="border: 6px solid #dddddd; text-align: left; padding: 12px;">VACANCYDETAILS</th>
-						<th
-							style="border: 6px solid #dddddd; text-align: left; padding: 12px;">JOBLOCATION</th>
-						<th
-							style="border: 6px solid #dddddd; text-align: left; padding: 12px;">COMPANYNAME</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="JOBS" items="${JOBS}">
-						<tr>
-							<td
-								style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDept}</td>
-							<td
-								style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDetails}</td>
-							<td
-								style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.jobLocation }</td>
-							<td
-								style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.companyName }</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+	<div class="hero-image">
+		<div style="padding-left: 1200px; text-align: top; padding-top: 10px;">
+			<a href="login.html"><b>Logout</b></a>
+		</div>
+		<div class="hero-text">
+			<div style="align: center;">
+				<form method="post" action="SearchJobServlet">
+					<h3>List of Jobs in various companies and locations:</h3>
+					<table>
+						<thead>
+							<tr>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 12px;">VACANCYDEPT</th>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 12px;">VACANCYDETAILS</th>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 12px;">JOBLOCATION</th>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 12px;">COMPANYNAME</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="JOBS" items="${JOBS}">
+								<tr>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDept}</td>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDetails}</td>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.jobLocation }</td>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.companyName }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 
-		</form>
+				</form>
+			</div>
 		</div>
-		</div>
-		</div>
+	</div>
 </body>
 </html>

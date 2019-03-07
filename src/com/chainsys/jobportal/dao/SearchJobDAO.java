@@ -9,8 +9,11 @@ import com.chainsys.jobportal.model.Admin;
 import com.chainsys.jobportal.util.ConnectionUtil;
 
 public class SearchJobDAO {
+	/*
+	 * serachJob( String deptName) method is used to display the related vacancy
+	 * details table when user pass the department name.
+	 */
 	public Admin searchJob(String deptName) throws SQLException {
-
 		Connection connection = ConnectionUtil.getConnection();
 		String sql = "select vacancy_dept,vacancy_details,job_location,company_name from admin where vacancy_dept=?";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -23,15 +26,17 @@ public class SearchJobDAO {
 			admin.setVacancyDetails(resultset.getString("vacancy_details"));
 			admin.setJobLocation(resultset.getString("job_location"));
 			admin.setCompanyName(resultset.getString("company_name"));
-
 		} else {
 			System.out.println("DEPTNAME ERROR");
 		}
-		ConnectionUtil.close(connection, preparedStatement , resultset);
+		ConnectionUtil.close(connection, preparedStatement, resultset);
 		return admin;
-
 	}
 
+	/*
+	 * searchLocation( String jobLocation) method is used to display the related
+	 * vacancy details table when user pass the job loacation name.
+	 */
 	public Admin searchLocation(String jobLocation) throws SQLException {
 		Connection connection = ConnectionUtil.getConnection();
 		String sql = "select vacancy_dept,vacancy_details,job_location,company_name from admin where job_location=?";
@@ -48,11 +53,14 @@ public class SearchJobDAO {
 		} else {
 			System.out.println("JOBLOCATION ERROR");
 		}
-		ConnectionUtil.close(connection, preparedStatement , rset);
+		ConnectionUtil.close(connection, preparedStatement, rset);
 		return admin;
-
 	}
 
+	/*
+	 * searchCompany( String companyName) method is used to display the related
+	 * vacancy details table when user pass the company name.
+	 */
 	public Admin searchCompany(String companyName) throws SQLException {
 		Connection connection = ConnectionUtil.getConnection();
 		String sql = "select vacancy_dept,vacancy_details,job_location,company_name from admin where company_name=?";
@@ -69,11 +77,14 @@ public class SearchJobDAO {
 		} else {
 			System.out.println("COMPANY NAME ERROR");
 		}
-		ConnectionUtil.close(connection, preparedStatement , result);
+		ConnectionUtil.close(connection, preparedStatement, result);
 		return admin;
-
 	}
 
+	/*
+	 * searchVacancy( String vacancyDetails) method is used to display the
+	 * related vacancy details table when user pass the vacancyDetails name.
+	 */
 	public Admin searchVacancy(String vacancyDetails) throws SQLException {
 		Connection connection = ConnectionUtil.getConnection();
 		String sql = "select vacancy_dept,vacancy_details,job_location,company_name from admin where vacancy_details=?";
@@ -90,7 +101,7 @@ public class SearchJobDAO {
 		} else {
 			System.out.println("COMPANY NAME ERROR");
 		}
-		ConnectionUtil.close(connection, preparedStatement , rSet);
+		ConnectionUtil.close(connection, preparedStatement, rSet);
 		return admin;
 
 	}

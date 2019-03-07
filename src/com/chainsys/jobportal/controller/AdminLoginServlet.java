@@ -24,21 +24,14 @@ public class AdminLoginServlet extends HttpServlet {
 		adminregistration.setPhoneNumber(phone);
 		adminregistration.setPassword(password);
 		RegisterDAO registerDAO = new RegisterDAO();
-		
-			if (registerDAO.checkadminLogin(adminregistration)) {
-				RequestDispatcher req = request
-						.getRequestDispatcher("admin.jsp");
-				req.forward(request, response);
-			}
-
-			else {
-				// TODO Auto-generated catch block
-				RequestDispatcher req = request
-						.getRequestDispatcher("failure.html");
-				req.forward(request, response);
-			}
-		} 
-			
-
+		if (registerDAO.checkadminLogin(adminregistration)) {
+			RequestDispatcher req = request.getRequestDispatcher("admin.jsp");
+			req.forward(request, response);
+		} else {
+			RequestDispatcher req = request
+					.getRequestDispatcher("failure.html");
+			req.forward(request, response);
+		}
 	}
 
+}

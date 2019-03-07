@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,8 +8,6 @@
 <title>Insert title here</title>
 </head>
 <style>
-
-
 .display {
 	position: absolute;
 	top: 20%;
@@ -35,45 +33,52 @@
 	color: white;
 }
 
-
 form {
 	display: inline-block;
 }
 </style>
 
 <body>
-<div class="hero-image">
-<div style="padding-left:1200px;text-align:top;padding-top:10px;">
- <a href="login.html"><b>Logout</b></a>
- </div>
- <div class="hero-text">
-<div align="center">
-<form method="post" action="SearchJobVacancy">
-<h3>List of Jobs in various companies and locations:</h3>
-	<table>
-		<thead>
-			<tr>
-				<th style="border: 6px solid #dddddd; text-align: left; padding: 8px;">VACANCYDEPT</th>
-				<th style="border: 6px solid #dddddd; text-align: left; padding: 8px;">VACANCYDETAILS</th>
-				<th style="border: 6px solid #dddddd; text-align: left; padding: 8px;">JOBLOCATION</th>
-				<th style="border: 6px solid #dddddd; text-align: left; padding: 8px;">COMPANYNAME</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach var="JOBS" items="${JOBS}">
-		<tr>
-					<td style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDept}</td>
-					<td style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDetails}</td>
-					<td style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.jobLocation }</td>
-					<td style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.companyName }</td>
-				</tr>
-					</c:forEach>
-					</tbody>
+	<div class="hero-image">
+		<div style="padding-left: 1200px; text-align: top; padding-top: 10px;">
+			<a href="login.html"><b>Logout</b></a>
+		</div>
+		<div class="hero-text">
+			<div align="center">
+				<form method="post" action="SearchJobVacancy">
+					<h3>List of Jobs in various companies and locations:</h3>
+					<table>
+						<thead>
+							<tr>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 8px;">VACANCYDEPT</th>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 8px;">VACANCYDETAILS</th>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 8px;">JOBLOCATION</th>
+								<th
+									style="border: 6px solid #dddddd; text-align: left; padding: 8px;">COMPANYNAME</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="JOBS" items="${JOBS}">
+								<tr>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDept}</td>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.vacancyDetails}</td>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.jobLocation }</td>
+									<td
+										style="border: 2px solid #dddddd; text-align: left; padding: 8px;">${JOBS.companyName }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
 					</table>
-		
-</form>
-</div>
-</div>
-</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

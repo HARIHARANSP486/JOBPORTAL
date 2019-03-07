@@ -16,28 +16,26 @@ import com.chainsys.jobportal.model.Admin;
 @WebServlet("/SearchJobCompany")
 public class SearchJobCompany extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    		String companyname=request.getParameter("companyName");
-    		System.out.println(companyname);
-    		FindAllDAO findallDAO=new FindAllDAO();
-    		try
-    		{
-    			List<Admin> adminlist=	findallDAO.searchCompany(companyname);
-    			System.out.println(adminlist);
-    			request.setAttribute("JOBS", adminlist);
-    			
-    			RequestDispatcher rd = request.getRequestDispatcher("listjob.jsp");
-    			rd.forward(request,response);
-    		}
-    		catch(Exception e)
-    		{
-    			e.printStackTrace();
-    		}
-    		}
-    	
-    	
-    	
-    	}
 
-
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String companyname = request.getParameter("companyName");
+		System.out.println(companyname);
+		FindAllDAO findallDAO = new FindAllDAO();
+		try {
+			List<Admin> adminlist = findallDAO.searchCompany(companyname);
+			if (adminlist == null) {
+				RequestDispatcher rd = request
+						.getRequestDispatcher("details.html");
+				rd.forward(request, response);
+			} else {
+				request.setAttribute("JOBS", adminlist);
+				RequestDispatcher rd = request
+						.getRequestDispatcher("listjob.jsp");
+				rd.forward(request, response);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

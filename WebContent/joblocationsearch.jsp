@@ -14,36 +14,31 @@
 	left: 10%;
 }
 
-
-body
-{
-	background-image: url("system-background.jpg") ;
-	background-repeat:no-repeat;
+body {
+	background-image: url("system-background.jpg");
+	background-repeat: no-repeat;
 	background-position: center center;
-text-align: center;
-
-padding-left:350px;
-font-family: Times New Roman;
-font-size: 22px
+	text-align: center;
+	padding-left: 350px;
+	font-family: Times New Roman;
+	font-size: 22px
 }
-
 
 form {
 	display: inline-block;
 }
-
 </style>
 <body>
-<div style="padding-left:890px">
- <a href="login.html">Logout</a>
- </div>
+	<div style="padding-left: 890px">
+		<a href="login.html">Logout</a>
+	</div>
 	<table>
 
 
 
 		<tr>
 			<td>
-				<div align="center" style="width: 600px; padding-top:150px">
+				<div align="center" style="width: 600px; padding-top: 150px">
 					<form method="post" action="SearchJoblocationServlet">
 						<h2>Search job:</h2>
 						<table>
@@ -59,8 +54,9 @@ form {
 										<option value="PUNE">PUNE</option>
 										<option value="MUMBAI">MUMBAI</option>
 								</select></td>
-								<td><button type="submit" style="width: 100px"><b>SUBMIT</b></button>
-									<br></td>
+								<td><button type="submit" style="width: 100px">
+										<b>SUBMIT</b>
+									</button> <br></td>
 						</table>
 					</form>
 				</div>

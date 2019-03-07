@@ -14,51 +14,47 @@
 	left: 10%;
 }
 
-
-body
-{
-	background-image: url("system-background.jpg") ;
-	background-repeat:no-repeat;
+body {
+	background-image: url("system-background.jpg");
+	background-repeat: no-repeat;
 	background-position: center center;
-text-align: center;
-
-padding-left:350px;
-font-family: Times New Roman;
-font-size: 21px;
+	text-align: center;
+	padding-left: 350px;
+	font-family: Times New Roman;
+	font-size: 21px;
 }
-
 
 form {
 	display: inline-block;
 }
-
 </style>
-<body >
+<body>
 
-	<div style="padding-left:890px">
- <a href="login.html">Logout</a>
- </div>
+	<div style="padding-left: 890px">
+		<a href="login.html">Logout</a>
+	</div>
 	<table>
 
 
 
 		<tr>
 			<td>
-				<div align="center" style="width: 600px; padding-top:150px">
+				<div align="center" style="width: 600px; padding-top: 150px">
 					<form method="post" action="SearchJobVacancy">
 						<h2>Search job:</h2>
 						<table>
 							<tr>
 								<td class="select"><b>Vacancy Details :</b></td>
 								<td><select name="jobvacancy">
-										<option value="FRONT END DEVELOPERS">FRONT END DEVELOPERS</option>
+										<option value="FRONT END DEVELOPERS">FRONT END
+											DEVELOPERS</option>
 										<option value="BACK END DEVELOPERS">BACK END
 											DEVELOPERS</option>
 										<option value="JAVA PROGRAMMER">JAVA PROGRAMMER</option>
 										<option value="FULL STACK DEVELOPERS">FULL STACK
 											DEVELOPERS</option>
 										<option value="SOFTWARE TESTING">SOFTWRAE TESTING</option>
-										<option value="R & D DEPARTMENT">R & D DEPARTMENT</option>
+										<option value="R & D DEPARTMENT">R AND D DEPARTMENT</option>
 										<option value="BUSINESS DEVELOPMENT">BUSINESS
 											DEVELOPMENT</option>
 										<option value="HUMAN RESOURCES">HUMAN RESOURCES</option>
@@ -67,8 +63,9 @@ form {
 
 
 
-								<td><button type="submit" style="width: 100px"><b>SUBMIT</b></button>
-									<br></td>
+								<td><button type="submit" style="width: 100px">
+										<b>SUBMIT</b>
+									</button> <br></td>
 						</table>
 					</form>
 				</div>
