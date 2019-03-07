@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.jobportal.dao.AdminRegisterDAO;
 import com.chainsys.jobportal.model.AdminRegistration;
+import com.chainsys.jobportal.validator.AdminRegisterValidator;
 
 @WebServlet("/AdminRegistrationServlet")
 public class AdminRegistrationServlet extends HttpServlet {
@@ -29,8 +30,10 @@ public class AdminRegistrationServlet extends HttpServlet {
 		adminregistration.setEmailId(emailId);
 		adminregistration.setPhoneNumber(phoneNumber);
 		adminregistration.setPassword(password);
+		//AdminRegisterValidator adminvalidator=new AdminRegisterValidator();
 		AdminRegisterDAO adminregisterDAO = new AdminRegisterDAO();
 		try {
+			//adminvalidator.registerValidator(adminregistration);
 			adminregisterDAO.addAdmin(adminregistration);
 			RequestDispatcher rd = request
 					.getRequestDispatcher("adminsuccess.html");

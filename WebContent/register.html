@@ -39,6 +39,13 @@ form {
 
 				</tr>
 				<tr align="left">
+					<td style="color: black"><b>Id :</b></td>
+					<td><input type="number" name="id" required></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				<tr>
+				<tr align="left">
 					<td style="color: black"><b>Name :</b></td>
 					<td><input type="text" name="name" required></td>
 				</tr>
@@ -47,8 +54,8 @@ form {
 				<tr>
 				<tr align="left">
 					<td style="color: black"><b>Phone no :</b></td>
-					<td><input type="number" name="phone" pattern="[0-9]{10}"
-						title="10 digits only" required></td>
+					<td><input type="number" maxlength="10" onkeypress="return event.charCode>=48&&event.charCode<=57" name="phone" 
+					 required></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>

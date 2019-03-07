@@ -26,6 +26,7 @@ public class PasswordValidator {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			//rethrow 
 		}
 		return isFind;
 	}

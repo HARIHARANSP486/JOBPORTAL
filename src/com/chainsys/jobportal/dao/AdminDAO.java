@@ -17,16 +17,14 @@ public class AdminDAO {
 		PreparedStatement preparedstatement = null;
 		try {
 			connection = ConnectionUtil.getConnection();
-			String sql = "insert into admin(id,admin_id,admin_name,vacancy_dept,vacancy_details,job_location,company_name,phone_no) values(admin_idno_seq.NEXTVAL,?,?,?,?,?,?,?)";
+			String sql = "insert into admin(id,vacancy_dept,vacancy_details,job_location,company_name,reference_numbers) values(admin_id_seq.NEXTVAL,?,?,?,?,?,?,?)";
 			preparedstatement = connection.prepareStatement(sql);
-			preparedstatement.setInt(1, admin.getAdminId());
-			preparedstatement.setString(2, admin.getAdminName());
-			preparedstatement.setString(3, admin.getVacancyDept());
+			preparedstatement.setString(1, admin.getVacancyDept());
 			System.out.println(admin.getVacancyDept());
-			preparedstatement.setString(4, admin.getVacancyDetails());
-			preparedstatement.setString(5, admin.getJobLocation());
-			preparedstatement.setString(6, admin.getCompanyName());
-			preparedstatement.setLong(7, admin.getPhoneNumber());
+			preparedstatement.setString(2, admin.getVacancyDetails());
+			preparedstatement.setString(3, admin.getJobLocation());
+			preparedstatement.setString(4, admin.getCompanyName());
+			preparedstatement.setLong(5, admin.getPhoneNumber());
 			preparedstatement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -40,24 +38,24 @@ public class AdminDAO {
 	 * checkLogin is used to check the admin phone number where it is present in
 	 * the admin registration table.
 	 */
-	public Admin checkLogin(Admin admin) {
-		Admin administration = null;
-		Connection connection = null;
-		PreparedStatement preparedstatement = null;
-		try {
-			connection = ConnectionUtil.getConnection();
-			String sql = "select phone_no from admin where phone_no=?";
-			preparedstatement = connection.prepareStatement(sql);
-			long phone = admin.getPhoneNumber();
-			preparedstatement.setLong(1, phone);
-			preparedstatement.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			ConnectionUtil.close(connection, preparedstatement, null);
-		}
-		return administration;
+//	public Admin checkLogin(Admin admin) {
+//		Admin administration = null;
+//		Connection connection = null;
+//		PreparedStatement preparedstatement = null;
+//		try {
+//			connection = ConnectionUtil.getConnection();
+//			String sql = "select phone_no from admin where phone_no=?";
+//			preparedstatement = connection.prepareStatement(sql);
+//			long phone = admin.getPhoneNumber();
+//			preparedstatement.setLong(1, phone);
+//			preparedstatement.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			ConnectionUtil.close(connection, preparedstatement, null);
+//		}
+//		return administration;
 	}
 
-}
+

@@ -38,23 +38,17 @@ form {
 					<td></td>
 				</tr>
 				
-
 				<tr align="left">
-					<td><b>ADMIN ID :</b></td>
-					<td><input type="number" name="adminId" required></td>
+					<td><b>ID :</b></td>
+					<td><input type="number" name="id" required></td>
 				</tr>
+				
 				<tr>
 					<td></td>
 					<td></td>
 				</tr>
-				<tr align="left">
-					<td><b>ADMIN NAME :</b></td>
-					<td><input type="text" name="adminName" required></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-				</tr>
+				
+				
 				<tr align="left">
 					<td class="select"><b>VACANCY DEPT :</b></td>
 					<td><select name="vacancyDept" required>

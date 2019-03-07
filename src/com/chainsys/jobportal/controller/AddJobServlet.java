@@ -18,16 +18,12 @@ public class AddJobServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		Integer adminId = Integer.parseInt(request.getParameter("adminId"));
-		String adminName = request.getParameter("adminName");
 		String vacancyDept = request.getParameter("vacancyDept");
 		String vacancyDetails = request.getParameter("vacancyDetails");
 		String jobLocation = request.getParameter("jobLocation");
 		String companyName = request.getParameter("companyName");
 		Long phoneNumber = Long.parseLong(request.getParameter("phoneNumber"));
 		Admin admin = new Admin();
-		admin.setAdminId(adminId);
-		admin.setAdminName(adminName);
 		admin.setVacancyDept(vacancyDept);
 		admin.setVacancyDetails(vacancyDetails);
 		admin.setJobLocation(jobLocation);

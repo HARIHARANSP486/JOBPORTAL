@@ -18,7 +18,7 @@ public class RegisterDAO {
 		PreparedStatement preparedstatement = null;
 		try {
 			connection = ConnectionUtil.getConnection();
-			String sql = "insert into register(name,phone_number,email,password,dept_name,experience) values(?,?,?,?,?,?)";
+			String sql = "insert into register(id,name,phone_number,email,password,dept_name,job_experience) values(register_idno_seq.NEXTVAL,?,?,?,?,?,?)";
 			preparedstatement = connection.prepareStatement(sql);
 			preparedstatement.setString(1, register.getName());
 			preparedstatement.setLong(2, register.getPhonenumber());

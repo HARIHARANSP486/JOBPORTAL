@@ -14,7 +14,7 @@ public class AdminRegisterDAO {
 		PreparedStatement preparedStatement = null;
 		try {
 			connection = ConnectionUtil.getConnection();
-			String sql = "insert into adminregistration(id,admin_id,admin_name,email_id,phone_number,password) values(adminregistration_id_seq.NEXTVAL,?,?,?,?,?)";
+			String sql = "insert into adminregistration(id,admin_id,admin_name,email_id,phone_number,password) values(adminregistration_idno_seq.NEXTVAL,?,?,?,?,?)";
 
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, adminregistration.getAdminId());
