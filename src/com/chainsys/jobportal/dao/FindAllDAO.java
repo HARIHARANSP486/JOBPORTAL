@@ -115,7 +115,7 @@ public class FindAllDAO {
 
 	public ArrayList<Admin> searchAny(String selectAny) throws SQLException {
 		Connection connection = ConnectionUtil.getConnection();
-		String sql = "select vacancy_dept,vacancy_details,job_loaction,comapny_name from admin"
+		String sql = "select vacancy_dept,vacancy_details,job_location,company_name from admin"
 				+ " where vacancy_dept=? or vacancy_details=? or job_location=? or company_name=? ";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, selectAny);
