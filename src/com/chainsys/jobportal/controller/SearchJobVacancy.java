@@ -24,17 +24,13 @@ public class SearchJobVacancy extends HttpServlet {
 		FindAllDAO findallDAO = new FindAllDAO();
 		try {
 			List<Admin> adminlist = findallDAO.searchVacancy(jobvacancy);
-			if (adminlist == null) {
-				RequestDispatcher rd = request
-						.getRequestDispatcher("details.html");
-				rd.forward(request, response);
-			} else {
-				System.out.println(adminlist);
-				request.setAttribute("JOBS", adminlist);
-				RequestDispatcher rd = request
-						.getRequestDispatcher("listvacancy.jsp");
-				rd.forward(request, response);
-			}
+
+			System.out.println(adminlist);
+			request.setAttribute("JOBS", adminlist);
+			RequestDispatcher rd = request
+					.getRequestDispatcher("listvacancy.jsp");
+			rd.forward(request, response);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

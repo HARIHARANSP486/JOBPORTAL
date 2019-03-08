@@ -13,24 +13,27 @@ import javax.servlet.http.HttpServletResponse;
 import com.chainsys.jobportal.dao.FindAllDAO;
 import com.chainsys.jobportal.model.Admin;
 
-@WebServlet("/SearchJobServlet")
-public class SearchJobServlet extends HttpServlet {
+@WebServlet("/OverallSearchServlet")
+public class OverallSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String deptName = request.getParameter("deptname");
-		System.out.println(deptName);
+
+		String selectAny = request.getParameter("selectAny");
+		System.out.println(selectAny);
 		FindAllDAO findallDAO = new FindAllDAO();
 		try {
-			List<Admin> adminlist = findallDAO.findAll(deptName);
+			List<Admin> adminlist = findallDAO.searchAny(selectAny);
 
 			request.setAttribute("JOBS", adminlist);
-			RequestDispatcher rd = request.getRequestDispatcher("list.jsp");
+			RequestDispatcher rd = request
+					.getRequestDispatcher("listdetails.jsp");
 			rd.forward(request, response);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }

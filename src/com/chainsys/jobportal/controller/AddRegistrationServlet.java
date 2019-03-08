@@ -34,10 +34,10 @@ public class AddRegistrationServlet extends HttpServlet {
 		register.setDeptname(deptname);
 		register.setExperience(Integer.parseInt(request
 				.getParameter("experience")));
-		//RegisterValidator registervalidator = new RegisterValidator();
+		RegisterValidator registervalidator = new RegisterValidator();
 		RegisterDAO registerDAO = new RegisterDAO();
 		try {
-			//registervalidator.registerValidator(register);
+			registervalidator.registerValidator(register);
 			registerDAO.addUser(register);
 			RequestDispatcher rd = request
 					.getRequestDispatcher("registersuccess.html");

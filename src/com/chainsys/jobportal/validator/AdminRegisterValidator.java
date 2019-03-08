@@ -1,25 +1,31 @@
 package com.chainsys.jobportal.validator;
 
+import com.chainsys.jobportal.exception.AdminEmailException;
+import com.chainsys.jobportal.exception.AdminIdException;
+import com.chainsys.jobportal.exception.AdminNameException;
+import com.chainsys.jobportal.exception.AdminNumberException;
+import com.chainsys.jobportal.exception.AdminPasswordException;
 import com.chainsys.jobportal.model.AdminRegistration;
 
 public class AdminRegisterValidator {
 	public void registerValidator(AdminRegistration adminregistration)
 			throws Exception {
 		if (adminregistration.getAdminId() == 0) {
-			throw new Exception("INVALID NAME");
+			throw new AdminIdException("INVALID ID.ID DOES NOT SUPPORT 0");
 		}
-		if (adminregistration.getAdminName() == "null") {
-			throw new Exception("INVALID NAME");
+		if (adminregistration.getAdminName() != "null") {
+			throw new AdminNameException("INVALID NAME");
 		}
-		if (adminregistration.getEmailId() == null) {
-			throw new Exception("INVALID email");
+		if (adminregistration.getEmailId() != "null") {
+			throw new AdminEmailException("INVALID email");
 		}
-		if (Long(adminregistration.getPhoneNumber()).length() != 10) {
-			throw new Exception(
+		int length=String.valueOf(adminregistration.getPhoneNumber()).length();
+		if (length != 10) {
+			throw new AdminNumberException(
 					"INVALID PHONE NUMBER. PHONE NUMBER MUST BE 10 DIGITS");
 		}
 		if (adminregistration.getPassword() == null) {
-			throw new Exception("INVALID NAME");
+			throw new AdminPasswordException("INVALID NAME");
 		}
 
 	}

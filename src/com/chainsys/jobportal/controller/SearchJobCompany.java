@@ -24,16 +24,11 @@ public class SearchJobCompany extends HttpServlet {
 		FindAllDAO findallDAO = new FindAllDAO();
 		try {
 			List<Admin> adminlist = findallDAO.searchCompany(companyname);
-			if (adminlist == null) {
-				RequestDispatcher rd = request
-						.getRequestDispatcher("details.html");
-				rd.forward(request, response);
-			} else {
-				request.setAttribute("JOBS", adminlist);
-				RequestDispatcher rd = request
-						.getRequestDispatcher("listjob.jsp");
-				rd.forward(request, response);
-			}
+
+			request.setAttribute("JOBS", adminlist);
+			RequestDispatcher rd = request.getRequestDispatcher("listjob.jsp");
+			rd.forward(request, response);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

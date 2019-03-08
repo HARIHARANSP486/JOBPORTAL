@@ -30,10 +30,10 @@ public class AdminRegistrationServlet extends HttpServlet {
 		adminregistration.setEmailId(emailId);
 		adminregistration.setPhoneNumber(phoneNumber);
 		adminregistration.setPassword(password);
-		//AdminRegisterValidator adminvalidator=new AdminRegisterValidator();
+		AdminRegisterValidator adminvalidator=new AdminRegisterValidator();
 		AdminRegisterDAO adminregisterDAO = new AdminRegisterDAO();
 		try {
-			//adminvalidator.registerValidator(adminregistration);
+			adminvalidator.registerValidator(adminregistration);
 			adminregisterDAO.addAdmin(adminregistration);
 			RequestDispatcher rd = request
 					.getRequestDispatcher("adminsuccess.html");

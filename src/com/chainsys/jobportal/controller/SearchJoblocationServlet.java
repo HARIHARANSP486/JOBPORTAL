@@ -24,18 +24,12 @@ public class SearchJoblocationServlet extends HttpServlet {
 		FindAllDAO findallDAO = new FindAllDAO();
 		try {
 			List<Admin> adminlist = findallDAO.searchLocation(jobLocation);
-			if(adminlist==null)
-			{
-				RequestDispatcher rd = request
-						.getRequestDispatcher("details.html");	
-				rd.forward(request, response);
-			}
-			else{
+
 			request.setAttribute("JOBS", adminlist);
 			RequestDispatcher rd = request
 					.getRequestDispatcher("listlocation.jsp");
 			rd.forward(request, response);
-			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
